@@ -18,7 +18,7 @@ def post():
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
 
 @application.route('/analyze/<bucket>/<image>', methods=['GET'])
-def analyze(bucket='yakov-my-upload-bucket-01', image='cocktails.jpg'):
+def analyze(bucket='yakov-my-upload-bucket-01', image='person.jpg'):
     return detect_labels(bucket, image)
     
 def detect_labels(bucket, key, max_labels=3, min_confidence=90, region="us-east-1"):
